@@ -11,6 +11,7 @@ async function runModel(data, profiles) {
 
     const Busses = [...new Set(data.map(row => row.idtag))];
     for (const bus of Busses) {
+        // bus = '14:1F:BA:10:7D:61'
         let filteredData = data.filter((row) => row.idtag === bus);
         if (filteredData.length === 0) {
             console.log(`No data found with idtag ${bus}.`);
